@@ -1,0 +1,18 @@
+.ps__rail-x {
+    height: 10px;
+    &:hover {
+        .ps__thumb-x {
+            height: 6px;
+        }
+    }
+    &:focus {
+        .ps__thumb-x {
+            height: 6px;
+        }
+    }
+    &.ps--clicking {
+        .ps__thumb-x {
+            height: 6px;
+        }
+    }
+}

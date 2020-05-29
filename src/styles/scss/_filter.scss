@@ -1,0 +1,164 @@
+.filter-actions {
+    width: 45rem;
+    box-shadow: 0 0 0 2px rgba(0, 0, 0, 0.1);
+    border-radius: 3px;
+    .inner-filter-actions {
+        padding: 0.5rem 1rem 0;
+    }
+    .flex-none {
+        flex: none;
+    }
+    .flex-auto {
+        -webkit-box-flex: 1;
+        -webkit-flex: 1 1 auto;
+        -ms-flex: 1 1 auto;
+        flex: 1 1 auto;
+        min-width: 0;
+        min-height: 0;
+    }
+    .truncate {
+        max-width: 100%;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        font-weight: 600;
+    }
+    .dropdown-box {
+        &.logical-box {
+            width: 4.2rem;
+        }
+        &.accessor-box {
+            width: 5rem;
+        }
+        &.operator-box {
+            width: 5rem;
+            &.sm-field {
+                width: 2.4rem;
+            }
+        }
+        .title {
+            padding-left: 0.25rem;
+            padding-right: 0.25rem;
+            height: 30px;
+            border-radius: 3px;
+            border: none;
+            background-color: transparent;
+            transition: background-color 0.2s ease;
+            color: #6c757d;
+            &:hover {
+                background-color: rgba(0, 0, 0, 0.05);
+            }
+            &:disabled {
+                background-color: transparent;
+                cursor: default;
+                outline: 0;
+                &::after {
+                    display: none;
+                }
+            }
+        }
+        &.sm-field {
+            .title {
+                background-color: rgba(0, 0, 0, 0.05);
+                border: 1px solid rgba(0, 0, 0, 0);
+            }
+        }
+        .dropdown-item {
+            padding: 0.275rem 0.5rem;
+            cursor: pointer;
+        }
+    }
+
+    .form-control {
+        background-color: rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0);
+        box-shadow: none;
+        resize: none;
+        border-radius: 3px;
+        padding: 0.275rem 0.225rem;
+        font-size: 0.9rem;
+    }
+    .react-datepicker-wrapper {
+        width: 100%;
+        height: 30px;
+        .react-datepicker__close-icon {
+            &::after {
+                font-size: 0.9rem;
+                opacity: 0.7;
+                color: #333333;
+            }
+        }
+    }
+
+    .uil-times {
+        &:before {
+            font-size: 16px;
+        }
+    }
+
+    ul {
+        list-style: none;
+        li {
+            margin-bottom: 0.5rem;
+            height: 30px;
+            &:last-child {
+                margin-bottom: 0;
+            }
+        }
+    }
+
+    .multiselect {
+        height: 30px;
+        min-height: 0;
+        font-size: 0.9rem !important;
+        border: 1px solid rgba(0, 0, 0, 0);
+        > .multiselect_select {
+            height: 30px;
+            &::before {
+                top: 16px;
+                z-index: 1;
+                border-width: 4px 4px 0;
+                border-color: #6c757d transparent transparent;
+            }
+        }
+        > .multiselect_tags {
+            height: 30px;
+            min-height: 0;
+            padding: 0;
+            border-radius: 3px;
+            border: 1px solid rgba(0, 0, 0, 0);
+            background: rgba(0, 0, 0, 0.05);
+            .multiselect_single {
+                font-size: 0.9rem;
+                padding: 0.275rem 0.35rem;
+                background: transparent;
+                color: #6c757d;
+            }
+            .multiselect_input {
+                background: transparent;
+                font-size: 0.9rem;
+                margin: 0;
+            }
+        }
+
+        > .multiselect_content-wrapper {
+            .multiselect_content {
+                padding: 0.25rem 0;
+                .multiselect_element {
+                    margin-bottom: 0 !important;
+                    height: auto !important;
+                    .multiselect_option {
+                        min-height: 0;
+                        padding: 0.275rem 0.35rem;
+                        &::after {
+                            line-height: 1.5rem;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .filter-buttons {
+        padding: 1rem 1rem 0.6rem;
+    }
+}
