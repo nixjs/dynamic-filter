@@ -19,6 +19,7 @@ const filterParser = data => {
             return;
         }
         const formatedItem = {};
+        let dataFormated = null;
         switch (dataType) {
             case LOGICAL_DATA_TYPE_FILTER.BOOLEAN:
                 Object.assign(formatedItem, {
@@ -45,18 +46,18 @@ const filterParser = data => {
                         },
                     });
                 } else if (dataCase === LOGICAL_CASE_FILTER.MULTIPLE) {
-                    let valueFormated = [];
+                    dataFormated = [];
                     if (!isEmpty(value)) {
                         value.forEach(v => {
                             if (!isEmpty(v.data)) {
-                                valueFormated.push(v.data);
+                                dataFormated.push(v.data);
                             }
                         });
                     }
                     Object.assign(formatedItem, {
                         [key]: {
                             [PARAMS_MAP_SERVER.OP]: op,
-                            [PARAMS_MAP_SERVER.VALUE]: !isEmpty(valueFormated) ? valueFormated : null,
+                            [PARAMS_MAP_SERVER.VALUE]: !isEmpty(dataFormated) ? dataFormated : null,
                         },
                     });
                 }
@@ -78,12 +79,11 @@ const filterParser = data => {
                 });
                 break;
             case LOGICAL_DATA_TYPE_FILTER.DATE_RANGE:
-                let dateRangeFormated = null;
                 if (!isEmpty(value) && checkDateValid(value?.from) && checkDateValid(value?.to)) {
                     const { opFrom, opTo, from, to } = value;
                     const fromFormat = moment(new Date(from)).toISOString();
                     const toFormat = moment(new Date(to)).toISOString();
-                    dateRangeFormated = {
+                    dataFormated = {
                         from: {
                             op: opFrom,
                             value: fromFormat,
